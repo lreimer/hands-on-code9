@@ -4,12 +4,15 @@ A demo repository to try remote development with AWS Code9. Also, the setup os d
 
 ## Useful commands
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+ * `npm run build`                              compile typescript to js
+ * `npm run watch`                              watch for changes and compile
+ * `npm run test`                               perform the jest unit tests
+ * `cdk deploy`                                 deploy this stack to your default AWS account/region
+ * `cdk diff`                                   compare deployed stack with current state
+ * `cdk synth`                                  emits the synthesized CloudFormation template
+ * `aws sts get-caller-identity`                use to get the account number if you do not know it
+ * `aws configure get region`                   use to get the currently configured region
+ * `cdk bootstrap aws://ACCOUNT-NUMBER/REGION`  bootstrap AWS account for CDK usage
 
 ## Maintainer
 
