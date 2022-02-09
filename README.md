@@ -1,6 +1,6 @@
-# Hands-on AWS Code9
+# Hands-on AWS Cloud9
 
-A demo repository to try remote development with AWS Code9. Also, the setup os done using AWS CDK and TypeScript.
+A demo repository to try remote development with AWS Cloud9. Also, the setup os done using AWS CDK and TypeScript.
 
 ## Useful commands
 
