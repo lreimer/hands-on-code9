@@ -9,7 +9,7 @@ export class HandsOnCode9Stack extends Stack {
     super(scope, id, props);
 
     const repository = new codecommit.Repository(this, 'HandsOnCloud9Repo', {
-      repositoryName: 'hands-on-cloud9',
+      repositoryName: 'hands-on-code9',
     });
 
     const cfnEnvironmentEC2 = new cloud9.CfnEnvironmentEC2(this, 'Cloud9EnvironmentEC2', {

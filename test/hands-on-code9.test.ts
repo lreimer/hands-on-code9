@@ -1,17 +1,25 @@
-// import * as cdk from 'aws-cdk-lib';
-// import { Template } from 'aws-cdk-lib/assertions';
-// import * as HandsOnCode9 from '../lib/hands-on-code9-stack';
+import * as cdk from 'aws-cdk-lib';
+import { Template } from 'aws-cdk-lib/assertions';
+import * as HandsOnCode9 from '../lib/hands-on-code9-stack';
 
-// example test. To run these tests, uncomment this file along with the
-// example resource in lib/hands-on-code9-stack.ts
-test('SQS Queue Created', () => {
-//   const app = new cdk.App();
-//     // WHEN
-//   const stack = new HandsOnCode9.HandsOnCode9Stack(app, 'MyTestStack');
-//     // THEN
-//   const template = Template.fromStack(stack);
+test('CodeCommit Repo and Cloud9 Created', () => {
+   const app = new cdk.App({
+       context: {
+            "name": "Hands-on Cloud9",
+            "instance_type": "t2.micro",
+       }
+   });
 
-//   template.hasResourceProperties('AWS::SQS::Queue', {
-//     VisibilityTimeout: 300
-//   });
+   const stack = new HandsOnCode9.HandsOnCode9Stack(app, 'MyTestStack', {       
+   });
+   const template = Template.fromStack(stack);
+
+   template.hasResourceProperties('AWS::CodeCommit::Repository', {
+    RepositoryName: 'hands-on-code9'
+   });
+
+   template.hasResourceProperties('AWS::Cloud9::EnvironmentEC2', {
+    InstanceType: 't2.micro',
+    AutomaticStopTimeMinutes: 60,
+   });
 });
