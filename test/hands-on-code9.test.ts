@@ -7,6 +7,7 @@ test('CodeCommit Repo and Cloud9 Created', () => {
        context: {
             "name": "Hands-on Cloud9",
             "instance_type": "t2.micro",
+            "owner_arn": "mario-leander.reimer"
        }
    });
 

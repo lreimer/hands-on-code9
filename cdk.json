@@ -19,6 +19,7 @@
   "context": {
     "name": "Hands-on Cloud9",
     "instance_type": "t2.micro",
+    "owner_arn": "",
     "@aws-cdk/aws-apigateway:usagePlanKeyOrderInsensitiveId": true,
     "@aws-cdk/core:stackRelativeExports": true,
     "@aws-cdk/aws-rds:lowercaseDbIdentifier": true,

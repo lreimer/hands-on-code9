@@ -1,4 +1,4 @@
-import { Stack, StackProps } from 'aws-cdk-lib';
+import { Stack, StackProps, CfnOutput } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 
 import * as codecommit from 'aws-cdk-lib/aws-codecommit';
@@ -15,7 +15,10 @@ export class HandsOnCode9Stack extends Stack {
     const cfnEnvironmentEC2 = new cloud9.CfnEnvironmentEC2(this, 'Cloud9EnvironmentEC2', {
       instanceType: this.node.tryGetContext('instance_type'),
       automaticStopTimeMinutes: 60,
+      ownerArn: this.node.tryGetContext('owner_arn'),
+      connectionType: 'CONNECT_SSM',
       name: this.node.tryGetContext('name'),
     });    
+
   }
 }
